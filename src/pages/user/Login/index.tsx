@@ -75,7 +75,12 @@ const Login: React.FC = () => {
     <div className={styles.container}>
       <div className={styles.content}>
         <LoginForm
-          logo={<img alt="logo" src="/logo.svg" />}
+          logo={
+            <img
+              alt="logo"
+              src="https://xingqiu-tuchuang-1256524210.cos.ap-shanghai.myqcloud.com/1012/avatar.jpg"
+            />
+          }
           title="Ant Design"
           subTitle={'Ant Design 是西湖区最具影响力的 Web 设计规范'}
           initialValues={{
