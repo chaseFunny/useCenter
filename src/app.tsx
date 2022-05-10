@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import { currentUser as queryCurrentUser } from './services/ant-design-pro/api';
 import { BookOutlined, LinkOutlined } from '@ant-design/icons';
 import defaultSettings from '../config/defaultSettings';
+import { RequestConfig } from '@@/plugin-request/request';
 
 const isDev = process.env.NODE_ENV === 'development';
 const loginPath = '/user/login';
@@ -16,7 +17,13 @@ const loginPath = '/user/login';
 export const initialStateConfig = {
   loading: <PageLoading />,
 };
-
+/**
+ * 网络请求配置
+ */
+export const request: RequestConfig = {
+  // timeout: 10000,
+  // prefix: '/api'
+};
 /**
  * @see  https://umijs.org/zh-CN/plugins/plugin-initial-state
  * */
