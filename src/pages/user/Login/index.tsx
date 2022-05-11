@@ -1,8 +1,8 @@
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { Alert, message, Tabs } from 'antd';
+import { Alert, Divider, message, Tabs } from 'antd';
 import React, { useState } from 'react';
 import { ProFormCheckbox, ProFormText, LoginForm } from '@ant-design/pro-form';
-import { history, useModel } from 'umi';
+import { history, Link, useModel } from 'umi';
 import Footer from '@/components/Footer';
 import { login } from '@/services/ant-design-pro/api';
 import styles from './index.less';
@@ -52,7 +52,6 @@ const Login: React.FC = () => {
         history.push(redirect || '/');
         return;
       }
-
       setUserLoginState(user);
     } catch (error) {
       const defaultLoginFailureMessage = '登录失败，请重试！';
@@ -135,6 +134,9 @@ const Login: React.FC = () => {
             <ProFormCheckbox noStyle name="autoLogin">
               自动登录
             </ProFormCheckbox>
+            <Divider type="vertical" />
+            <Link to={'/user/register'}>新用户注册</Link>
+            <Divider type="vertical" />
             <a
               style={{
                 float: 'right',

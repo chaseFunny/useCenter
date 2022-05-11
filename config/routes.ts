@@ -9,6 +9,11 @@ export default [
         component: './user/Login',
       },
       {
+        name: '注册',
+        path: '/user/register',
+        component: './user/Register',
+      },
+      {
         component: './404',
       },
     ],
