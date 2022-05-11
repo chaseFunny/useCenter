@@ -35,7 +35,7 @@ export async function getInitialState(): Promise<{
   loading?: boolean;
   fetchUserInfo?: API.CurrentUser;
 }> {
-  // 获取当前用户信息
+  // 获取当前用户信息，
   const fetchUserInfo = async () => {
     try {
       return await queryCurrentUser();
