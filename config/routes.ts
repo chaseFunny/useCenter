@@ -26,14 +26,14 @@ export default [
   },
   {
     path: '/admin',
-    name: '管理页',
+    name: '管理',
     icon: 'crown',
     access: 'canAdmin',
     component: './Admin',
     routes: [
       {
         path: '/admin/sub-page',
-        name: '二级管理页',
+        name: '用户管理',
         icon: 'smile',
         component: './Welcome',
       },
@@ -43,9 +43,10 @@ export default [
     ],
   },
   {
-    name: '查询表格',
+    name: '用户管理',
     icon: 'table',
     path: '/list',
+    access: 'canAdmin',
     component: './TableList',
   },
   {

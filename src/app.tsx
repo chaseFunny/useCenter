@@ -33,7 +33,7 @@ export async function getInitialState(): Promise<{
   settings?: Partial<LayoutSettings>;
   currentUser?: API.CurrentUser;
   loading?: boolean;
-  fetchUserInfo?: API.CurrentUser;
+  fetchUserInfo?: () => Promise<API.CurrentUser | undefined>;
 }> {
   // 获取当前用户信息，
   const fetchUserInfo = async () => {
@@ -51,7 +51,7 @@ export async function getInitialState(): Promise<{
       fetchUserInfo,
       currentUser,
       settings: defaultSettings,
-    } as any;
+    };
   }
   return {
     fetchUserInfo,
@@ -65,7 +65,7 @@ export const layout: RunTimeLayoutConfig = ({ initialState, setInitialState }) =
     rightContentRender: () => <RightContent />,
     disableContentMargin: false,
     waterMarkProps: {
-      content: initialState?.currentUser?.name,
+      content: initialState?.currentUser?.username,
     },
     footerRender: () => <Footer />,
     onPageChange: () => {
